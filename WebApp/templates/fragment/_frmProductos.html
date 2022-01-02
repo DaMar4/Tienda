@@ -1,0 +1,110 @@
+
+<form action="{{url_for('productos_bp.productos_add')}}" method="post">
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                {{form.descripcion.label}}
+                {{form.descripcion(class='form-control')}}
+            </div>
+            <div class="col">
+                {{form.unidad.label}}
+                {{form.unidad(class='form-control')}}
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col">
+                
+            </div>
+            <div class="col-xl-12">
+                {{form.categoria.label}}
+                {{form.categoria(class='form-control')}}
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+                <button type="reset" class="btn btn-primary">Borrar</button>
+            </div>
+        </div>
+    </form>
+</div>
+<hr/>
+
+<table class="table text-center table-hover table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                No
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Unidad
+            </th>
+            <th>
+                Categoría
+            </th>
+            <th>
+                Opciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+            {% if producto %}
+                <tr>
+                    <td>
+                        {{loop.index}}
+                    </td>
+                    <td>
+                        {{producto['descripcion']}}
+                    </td>
+                    <td>
+                        {{producto['unidad']}}
+                    </td>
+                    <td>
+                        {{producto['categoria']}}
+                    </td>
+                    <td>
+                        <a href="{{url_for('productos_bp.producto_edit',id=producto['id_producto'])}}" title="Editar ingreso" rel="noopener noreferrer">
+                            <i class="fa fa-pen" style="color:mediumseagreen"></i>
+                        </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" title="Eliminar ingreso" data-bs-name="{{producto['descripcion']}}" data-bs-id="{{producto['id_producto']}}" href="" rel="noopener noreferrer">
+                            <i class="fa fa-trash" style="color:rgb(255, 55, 55)"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Borrar:
+                    <strong>
+                        <span></span>
+                    </strong>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                seguro que desea borrar el ingreso?
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="eliminar_categoria" class="btn btn-danger" rel="noopener noreferrer" title="Eliminar">
+                    <i class="fa fa-trash"></i>
+                    Eliminar</a>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    DeleteProducto()
+</script>

@@ -1,0 +1,32 @@
+<form action="{{url_for('productos_bp.producto_edit',id=productos['id_producto'])}}" method="post">
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                {{form.descripcion.label}}
+                {{form.descripcion(class='form-control')}}
+            </div>
+            <div class="col">
+                {{form.unidad.label}}
+                {{form.unidad(class='form-control')}}
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col">
+                
+            </div>
+            <div class="col-xl-12">
+                {{form.categoria.label}}
+                {{form.categoria(class='form-control')}}
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary">Modificar</button>
+                <button type="reset" class="btn btn-primary">Borrar</button>
+            </div>
+        </div>
+    </form>
+</div>

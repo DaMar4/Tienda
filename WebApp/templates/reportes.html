@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+{% block title %}
+Reportes
+{% endblock%}
+{% block container %}
+    {% include 'fragment/_flash.html'%}
+    <br>
+    <table class="table table-bordered">
+        <thead class="table-primary">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Usuario que registro</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Opción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in salida %}
+            <tr>
+                <td>{{i['id_producto']}}</td>
+                <td>{{i['registrado_por']}}</td>
+                <td>{{i['fecha']}}</td>
+                <td><a class="btn btn-primary btn-sm" href="{{url_for('crud.download',id=i['id_producto'])}}">Descargar&nbsp;<i class="fa fa-download"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,100 @@
+<div id="sidebar">
+    <div class="toggle-btn">
+        <i class="fa fa-bars square"></i>
+    </div>
+    
+    <i class="fa fa-user" style="color:white;"></i>
+    <p style="color:white">Sistema CGMAIG</p>
+    <div class="accordion" id="panelsStayOpen-collapseOne">
+        <div class="accordion-item bg-dark">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed bg-dark" style="color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    Almacen
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body-sm">
+                    <ul>
+                        <li><a href="{{url_for('productos_bp.productos_add')}}" rel="noopener noreferrer">Productos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item bg-dark">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed bg-dark" style="color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Entradas
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                    <ul>
+                        <li><a href="{{url_for('ingresos_bp.ingreso_add')}}" rel="noopener noreferrer">Ingresos</a></li>
+                        <li><a href="{{url_for('proveedores_bp.proveedores')}}" rel="noopener noreferrer">Proveedores</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item bg-dark">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                <button class="accordion-button collapsed bg-dark" style="color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Salidas
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                <div class="accordion-body">
+                    <ul>
+                        <li><a href="{{url_for('salidas_bp.salidas_add')}}" rel="noopener noreferrer">Salidas</a></li>
+                        <li><a href="{{url_for('empleados_bp.empleados_add')}}" rel="noopener noreferrer">Empleados</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% if current_user.rol.value !=1 %}
+        <div class="accordion-item bg-dark">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                <button class="accordion-button collapsed bg-dark" style="color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                    Acceso
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+                <div class="accordion-body">
+                    <ul>
+                        <li><a href="{{url_for('registrar_bp.register')}}" rel="noopener noreferrer">Alta de usuario</a></li>
+                        <li><a href="{{url_for('registrar_bp.user_list')}}" rel="noopener noreferrer">Baja de usuario</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        {% endif %}
+        <div class="accordion-item bg-dark">
+            <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                <button class="accordion-button collapsed bg-dark" style="color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                    Inventarios
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
+                <div class="accordion-body">
+                    <ul>
+                        <li><a href="{{url_for('inventario_bp.inventario_add')}}" rel="noopener noreferrer">Reportes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item bg-dark">
+            <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+                <button class="accordion-button collapsed bg-dark" style="color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+                    Requerimientos
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSeven">
+                <div class="accordion-body">
+                    <ul>
+                        <li><a href="" rel="noopener noreferrer">Requerimientos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

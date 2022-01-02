@@ -1,0 +1,1 @@
+document.getElementById("registrado_por").value = document.getElementById("name").innerHTML

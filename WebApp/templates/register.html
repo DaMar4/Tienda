@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+{% block title %}
+    Crear cuenta
+{% endblock %}
+{% block container %}
+    <div class="text-center">
+        {% include 'fragment/_flash.html' %}
+        <br>
+        <form action="{{ url_for('registrar_bp.register') }}" method="post" class="form-signin">
+                <h1 class="h3 mb-3 font-weight-normal">
+                    <i class="fas fa-user"></i>&nbsp;Registrar Usuario</h1>
+                {% include 'fragment_login/_form_registro.html' %}
+                <div class="checkbox mb-3"></div>
+                <button class="btn btn-lg btn-primary btn-block btn-sm" type="submit">Registrar</button>
+            </form>
+        </div>
+    {% endblock %}
