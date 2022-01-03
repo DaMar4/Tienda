@@ -2,9 +2,9 @@
 <form action="{{url_for('inventario_bp.download')}}" method="post">
     <div class="container">
         <div class="row align-items-start">
-            <div class="col">
-                {{form.nombre.label}}
-                {{form.nombre(class='form-control')}}
+            <div class="col-12">
+                {{form.fecha_inicio.label}}
+                {{form.fecha_inicio(class='form-control')}}
             </div>
             <div class="col">
             </div>
@@ -12,9 +12,9 @@
     </div>
     <br/>
     <div class="container">
-        <div class="row justify-content-end">
-            <div class="col-3">
-                <button type="submit" class="btn btn-primary">Consultar</button>
+        <div class="row">
+            <div class="col d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary">Consultar</button> &nbsp;
                 <button type="reset" class="btn btn-primary">Borrar</button>
             </div>
         </div>
